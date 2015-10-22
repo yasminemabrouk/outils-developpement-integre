@@ -33,6 +33,8 @@ public class Bank {
     public Bank(int number, String name) {
         this.number = number;
         this.name = name;
+        this.customers = new ArrayList<>();
+        this.accounts = new ArrayList<>();
     }
 
     /**
@@ -86,7 +88,7 @@ public class Bank {
      */
     public void addAccount(String number, String name, double rate, Customer customer) {
         if (customers.contains(customer)) {
-            getCustomerByNumber(customer.getNumber()).addAccount(number, name, rate);
+            this.accounts.add(new Account(number, name, rate, customer));
         }
     }
 }

@@ -49,6 +49,7 @@ public class Account {
      */
     public static void transfer(double amount, Account source, Account target) {
         if (source.getBalance() < amount) {
+            System.out.println(source.getBalance()+ "  "+ amount );
             throw new IllegalStateException();
         }
         source.debit(amount);

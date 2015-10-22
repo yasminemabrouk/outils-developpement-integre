@@ -18,6 +18,27 @@ public class App {
         Bank bank = new Bank(1, "BlaserBank");
         bank.addCustomer(1, "Maël", "Blaser");
         bank.addCustomer(2, "Jean", "Pierre");
+        bank.addAccount("1", "Courant", 0.001, bank.getCustomerByNumber(1));
+
+        System.out.println("Customer 1, compte 1, balance : "
+                + bank.getAccountByNumber("1").getBalance());
+        System.out.println("**Customer 1, compte 1, credit 25");
+        bank.getAccountByNumber("1").credit(25);
+        System.out.println("**Customer 1, compte 1, debit 10");
+        bank.getAccountByNumber("1").debit(10);
+        System.out.println("Customer 1, compte 1, balance : " + bank.getAccountByNumber("1").getBalance());
+
+        bank.addAccount("2", "Courant", 0.001, bank.getCustomerByNumber(2));
+        System.out.println("**Customer 1, compte 1, transfert of 10 to Customer 2, compte 1");
+        bank.getAccountByNumber("1").transfer(10, bank.getAccountByNumber("1"), bank.getAccountByNumber("2"));
+        System.out.println("Customer 1, compte 1, balance : " + bank.getAccountByNumber("1").getBalance());
+        System.out.println("Customer 2, compte 1, balance : " + bank.getAccountByNumber("2").getBalance());
+        bank.addAccount("3", "Epargne", 0.002, bank.getCustomerByNumber(1));
+        System.out.println("Customer 1, compte 2, balance : " + bank.getAccountByNumber("3").getBalance());
+        System.out.println("**Customer 1, compte 1, transfert of 5 to Customer 1, compte 2");
+        bank.getAccountByNumber("1").transfer(5, bank.getAccountByNumber("1"), bank.getAccountByNumber("3"));
+        System.out.println("Customer 1, compte 1, balance : " + bank.getAccountByNumber("1").getBalance());
+        System.out.println("Customer 1, compte 2, balance : " + bank.getAccountByNumber("3").getBalance());
         /*
          Customer customer1 = new Customer(1, "Maël", "Blaser");
          Customer customer2 = new Customer(2, "Jean", "Pierre");
