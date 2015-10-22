@@ -17,7 +17,8 @@ public class App {
         Customer customer1 = new Customer(1, "Maël", "Blaser");
         Customer customer2 = new Customer(2, "Jean", "Pierre");
         customer1.addAcount("1", "Courant", 0.001);
-        System.out.println("Customer 1, compte 1, balance : " + customer1.getAccountByNumber("1").getBalance());
+        System.out.println("Customer 1, compte 1, balance : " 
+                + customer1.getAccountByNumber("1").getBalance());
         System.out.println("**Customer 1, compte 1, credit 25");
         customer1.getAccountByNumber("1").credit(25);
         System.out.println("**Customer 1, compte 1, debit 10");

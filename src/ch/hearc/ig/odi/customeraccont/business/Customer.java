@@ -28,7 +28,7 @@ public class Customer {
     public Account getAccountByNumber(String number) {
         int i = 0;
         Account account = null ;
-        while(i < accounts.size()-1 &&  account == null ) {
+        while(i < accounts.size()-1 ||  account == null ) {
             if (accounts.get(i).getNumber() == number) {
                 account = accounts.get(i);
             }
