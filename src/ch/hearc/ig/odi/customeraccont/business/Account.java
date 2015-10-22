@@ -15,11 +15,11 @@ public class Account {
      * @param rate
      * @param customer
      */
-    public Account(String number, String name,  double rate ,Customer customer ) {
+    public Account(String number, String name, double rate, Customer customer) {
         this.number = number;
         this.name = name;
         this.rate = rate;
-        this.customer = customer ;
+        this.customer = customer;
     }
 
     /**
@@ -36,7 +36,7 @@ public class Account {
      */
     public void debit(double amount) {
         if (balance < amount) {
-            throw new IllegalStateException() ;
+            throw new IllegalStateException();
         }
         balance = balance - amount;
     }
@@ -49,7 +49,7 @@ public class Account {
      */
     public static void transfer(double amount, Account source, Account target) {
         if (source.getBalance() < amount) {
-            throw new IllegalStateException() ;
+            throw new IllegalStateException();
         }
         source.debit(amount);
         target.credit(amount);

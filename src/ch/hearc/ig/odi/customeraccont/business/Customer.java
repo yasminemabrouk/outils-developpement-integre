@@ -7,7 +7,7 @@ public class Customer {
     private int number;
     private String firstName;
     private String lastName;
-    private ArrayList<Account> accounts = new ArrayList <Account>() ;
+    private ArrayList<Account> accounts = new ArrayList<Account>();
 
     /**
      *
@@ -27,14 +27,14 @@ public class Customer {
      */
     public Account getAccountByNumber(String number) {
         int i = 0;
-        Account account = null ;
-        while(i < accounts.size()-1 ||  account == null ) {
+        Account account = null;
+        while (i < accounts.size() - 1 || account == null) {
             if (accounts.get(i).getNumber() == number) {
                 account = accounts.get(i);
             }
             i++;
         }
-        return account ;
+        return account;
     }
 
     /**
@@ -44,7 +44,7 @@ public class Customer {
      * @param rate
      */
     public void addAccount(String number, String name, double rate) {
-        Account account = new Account(number , name , rate, this);
+        Account account = new Account(number, name, rate, this);
         accounts.add(account);
     }
 
